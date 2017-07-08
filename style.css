@@ -8,6 +8,7 @@
 }
 
 .bar { 
+    position: fixed;
     color: #f4f4f4!important;
     background: #363d4d!important;
     display: block;
@@ -39,12 +40,11 @@
 
 .top {
     top: -60px;
-    position: absolute;
 }
 
 .bottom {
     bottom: 0px;
-    position: fixed;
+    
 }
 
 .text {

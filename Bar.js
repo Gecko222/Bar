@@ -15,6 +15,10 @@ Bar.prototype.closeBar = function() {
 		return;
 	}
 	
+	if (this.position === 'top') {
+		document.body.style['padding-top'] = '0px';
+	}
+
 	this.bar.parentNode.removeChild(this.bar);
 	this.bar = false;
 };
@@ -23,7 +27,7 @@ Bar.prototype.changePosition = function(position) {
 	if ( (position !== 'top') && (position !== 'bottom') ) {
 		return;
 	}
-	
+
 	this.closeBar();
 	this.position = position;
 	this.bar = this._create();	
@@ -95,6 +99,7 @@ Bar.prototype._animate = function() {
 
 		if (top < 0) {
 			this.bar.style.top = `${top + 1}px`;
+			document.body.style['padding-top'] = `${50+top}px`;
 			window.requestAnimationFrame(() => this._animate());
 		}
 	});
