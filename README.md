@@ -22,3 +22,15 @@ var bar = new Bar({
 ```
 ---
 + Available positions: top, bottom
+
+# Screenshots
+
+## Top position with slide
+
+![top-slide1.png](/screenshots/top-slide1.png?raw=true)
+
+![top-slide2.png](/screenshots/top-slide2.png?raw=true)
+
+## Bottom position
+
+![bottom.png](/screenshots/bottom.png?raw=true)
