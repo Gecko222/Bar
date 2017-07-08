@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task</title>
+	<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+	<script src="./Bar.js"></script>
+	<script>
+		var bar = new Bar({
+			message: 'Test msg.',
+			position: 'top',
+			clickOk: () => alert('OK!'),
+			close: () => alert(':(')
+		});
+	</script>
+</body>
+</html>

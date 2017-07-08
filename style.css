@@ -1,0 +1,110 @@
+.bar {
+    top: 0;
+    color: #f4f4f4!important;
+    background: #363d4d!important;
+    display: block;
+    white-space: nowrap!important;
+    overflow: hidden;
+    padding: 5px 42px!important;
+    text-align: center!important;
+    left: 0;
+    right: 0;
+    position: fixed;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: content-box!important;
+    box-shadow: none;
+    background-clip: padding-box!important;
+    line-height: 1.2;
+    vertical-align: middle;
+    text-align: left;
+    font-weight: 400;
+    font-family: inherit;
+    font-style: normal;
+    letter-spacing: normal;
+    text-shadow: none;
+    text-transform: none;
+    float: none;
+    z-index: 2147483635;
+}
+
+.top {
+    top: 0;
+}
+
+.bottom {
+    bottom: 0;
+}
+
+.text {
+    font-size: 14px;
+    line-height: 32px;
+    display: inline-block;
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 60%;
+    max-width: calc(100% - 357px);
+    margin-right: 16px;
+}
+
+.button {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    border-radius: 2px;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 0;
+    outline: 0;
+    font-family: inherit;
+    text-transform: none;
+    overflow: visible;
+    color: #ffffff!important;
+    background: #ffbe00!important;
+    -webkit-transition: background-color .2s ease-out!important;
+    transition: background-color .2s ease-out!important;
+    line-height: 32px;
+    font-size: 14px;
+    font-weight: 700;
+    max-width: 317px;
+    word-wrap: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    position: relative;
+}
+
+.close {
+    color: #f4f4f4!important;
+    font-family: gsc!important;
+    font-style: normal!important;
+    font-weight: 400!important;
+    line-height: 1;
+    vertical-align: middle;
+    display: inline-block;
+    background-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 22px;
+    height: 22px;
+    width: 22px;
+    -webkit-transition: opacity .2s,-webkit-transform .2s!important;
+    transition: opacity .2s,-webkit-transform .2s!important;
+    transition: transform .2s,opacity .2s!important;
+    transition: transform .2s,opacity .2s,-webkit-transform .2s!important;
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    opacity: .5;
+    cursor: pointer;
+    position: absolute;
+    z-index: 2147483637;
+    padding: 10px;
+    right: 0;
+    top: 0;
+}
