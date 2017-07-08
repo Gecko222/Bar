@@ -20,3 +20,5 @@ var bar = new Bar({
 });
 </script>
 ```
+---
++ Available positions: top, bottom

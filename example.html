@@ -6,14 +6,39 @@
 	<link rel="stylesheet" href="./style.css">
 </head>
 <body>
+	<div class="buttons">
+		<a id="top">Up</a> | <a id="bottom">Bottom</a>
+	</div>
 	<script src="./Bar.js"></script>
 	<script>
-		var bar = new Bar({
-			message: 'Test msg.',
-			position: 'top',
-			clickOk: () => alert('OK!'),
-			close: () => alert(':(')
+	var bar;
+
+		document.getElementById('top').addEventListener('click', () => {
+			if (!bar) {
+				bar = new Bar({
+				message: 'Test msg.',
+				position: 'top',
+				clickOk: () => alert('OK!'),
+				close: () => alert(':(')
+				});
+			} else {
+				bar.changePosition('top');
+			}
 		});
+
+		document.getElementById('bottom').addEventListener('click', () => {
+			if (!bar) {
+				bar = new Bar({
+				message: 'Test msg.',
+				position: 'bottom',
+				clickOk: () => alert('OK!'),
+				close: () => alert(':(')
+				});
+			} else {
+				bar.changePosition('bottom');
+			}
+		});
+		
 	</script>
 </body>
 </html>

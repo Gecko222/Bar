@@ -1,5 +1,13 @@
-.bar {
-    top: 0;
+.buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    transform: translate(-50%, -50%);
+}
+
+.bar { 
     color: #f4f4f4!important;
     background: #363d4d!important;
     display: block;
@@ -9,7 +17,6 @@
     text-align: center!important;
     left: 0;
     right: 0;
-    position: fixed;
     font-size: 0;
     margin: 0;
     padding: 0;
@@ -31,11 +38,13 @@
 }
 
 .top {
-    top: 0;
+    top: -60px;
+    position: absolute;
 }
 
 .bottom {
-    bottom: 0;
+    bottom: 0px;
+    position: fixed;
 }
 
 .text {

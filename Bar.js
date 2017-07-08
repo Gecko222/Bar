@@ -6,13 +6,33 @@ function Bar(options) {
 	this.okCallback = options.clickOk;
 	
 	this.bar = this._create();	
-	
-	document.body.appendChild(this.bar);
+
+	this._append();
 }
+
+Bar.prototype.closeBar = function() { 
+	if (!this.bar) {
+		return;
+	}
+	
+	this.bar.parentNode.removeChild(this.bar);
+	this.bar = false;
+};
+
+Bar.prototype.changePosition = function(position) { 
+	if ( (position !== 'top') && (position !== 'bottom') ) {
+		return;
+	}
+	
+	this.closeBar();
+	this.position = position;
+	this.bar = this._create();	
+	this._append();
+};
 
 Bar.prototype._create = function() {
 	var bar = document.createElement('div');
-	bar.className = 'bar top';
+	bar.className = `bar ${this.position}`;
 
 	var text = document.createElement('span');
 	text.className = 'text';
@@ -36,6 +56,15 @@ Bar.prototype._create = function() {
 	return bar;
 };
 
+
+Bar.prototype._append = function() { 
+	document.body.appendChild(this.bar);
+
+	if (this.position === 'top') {
+		this._animate();
+	}
+};
+
 Bar.prototype._buttonClick = function() { 
 	if (typeof(this.okCallback) === 'function') {
 		this.okCallback();
@@ -52,16 +81,21 @@ Bar.prototype._closeClick = function() {
 	this.closeBar();
 };
 
-Bar.prototype.changePosition = function(position) { 
-	if (position === 'top') {
-		this.bar.className = 'bar top';
-	}
+Bar.prototype._animate = function() { 
+	window.requestAnimationFrame(() => {
+		if (!this.bar || this.position !== 'top') {
+			return;
+		}
 
-	if (position === 'bottom') {
-		this.bar.className = 'bar bottom';
-	}
-};
+		var top = parseInt(this.bar.style.top);
 
-Bar.prototype.closeBar = function() { 
-	this.bar.parentNode.removeChild(this.bar);
+		if (isNaN(top)) {
+			top = -50;
+		}
+
+		if (top < 0) {
+			this.bar.style.top = `${top + 1}px`;
+			window.requestAnimationFrame(() => this._animate());
+		}
+	});
 };
