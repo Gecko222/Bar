@@ -7,6 +7,8 @@ function Bar(options) {
 	
 	this.bar = this._create();	
 
+	this._animating = false;
+
 	this._append();
 }
 
@@ -86,8 +88,19 @@ Bar.prototype._closeClick = function() {
 };
 
 Bar.prototype._animate = function() { 
+	if (this._animating) {
+		return;
+	}
+
+	this._animating = true;
+
+	this._animation();
+};
+
+Bar.prototype._animation = function () {
 	window.requestAnimationFrame(() => {
 		if (!this.bar || this.position !== 'top') {
+			this._animating = false;
 			return;
 		}
 
@@ -100,7 +113,9 @@ Bar.prototype._animate = function() {
 		if (top < 0) {
 			this.bar.style.top = `${top + 1}px`;
 			document.body.style['padding-top'] = `${50+top}px`;
-			window.requestAnimationFrame(() => this._animate());
+			window.requestAnimationFrame(() => this._animation());
+		} else {
+			this._animating = false;
 		}
 	});
 };

@@ -17,10 +17,10 @@ Some text.
 		document.getElementById('top').addEventListener('click', () => {
 			if (!bar) {
 				bar = new Bar({
-				message: 'Test msg.',
-				position: 'top',
-				clickOk: () => alert('OK!'),
-				close: () => alert(':(')
+					message: 'Test msg.',
+					position: 'top',
+					clickOk: () => alert('OK!'),
+					close: () => alert(':(')
 				});
 			} else {
 				bar.changePosition('top');
@@ -30,10 +30,10 @@ Some text.
 		document.getElementById('bottom').addEventListener('click', () => {
 			if (!bar) {
 				bar = new Bar({
-				message: 'Test msg.',
-				position: 'bottom',
-				clickOk: () => alert('OK!'),
-				close: () => alert(':(')
+					message: 'Test msg.',
+					position: 'bottom',
+					clickOk: () => alert('OK!'),
+					close: () => alert(':(')
 				});
 			} else {
 				bar.changePosition('bottom');
